@@ -15,8 +15,10 @@ namespace CMDProject
     
     internal class Program
     {
+        //This func gets the size of the file
         public static string filebytes(string cmd)
         {
+            //Get all the files
             string[] filestrings = Directory.GetFiles(cmd);
             int filecount=filestrings.Length;
             int sum=0;
@@ -27,7 +29,7 @@ namespace CMDProject
             }
             return filecount+"  File(s)        " + sum + "   byte(s)";
         }
-        
+        //This file gets all the directories
         public static string[] dirli(string cmd)
         {
           
@@ -52,11 +54,9 @@ namespace CMDProject
             Console.Title = "Command Prompt";
   
             DateTime dt = DateTime.Now;
-            string result = "";
-            string timestamp = "";
-            string output = @"c:\Output";
+          
             string text = @"c:\Output\Output(" +dt.Hour+ "-"+dt.Minute+").zip";
-            string extractPath = @".\extract";
+          
             if (Directory.Exists(@"c:\Output") == false)
             {
                 Directory.CreateDirectory(@"c:\Output");
@@ -152,25 +152,16 @@ namespace CMDProject
                         try
                         {
                            
-                            //int maxle=dirli(cmd).Max(c=>c.Length);
-                            ////Console.WriteLine(maxle);
+                          
                             foreach (var d in dirli(cmd))
                             {
-                                //    string rpl;
-                                //    rpl = d;
-                                //    for(int i = rpl.Length; i < maxle; i++)
-                                //    {
-                                //        if(rpl.Length<maxle)
-                                //        {
-                                //            rpl += " "; 
-                                //        }
-                                //    }
+                               
 
 
                                 Console.WriteLine(Directory.GetCreationTime(d).ToString("yyyy/MM/dd hh:mm tt") + "\t\t\t"+ Path.GetFileNameWithoutExtension(d));
                                 
                             }
-                            //Console.WriteLine(filebytes(cmd));
+                        
                            
                             indir = true;
                             
@@ -201,31 +192,11 @@ namespace CMDProject
                    
 
                 }
-                //Console.Write("\nPress 'E' to exit the process...");
-
-                //// here it asks to press "E" to exit
-                //// and the key "E" is not shown in
-                //// the console output window
-                //while (Console.ReadKey(true).Key != ConsoleKey.E)
-                //{
-                //}
+              
                 a();
                
-                //using (FileStream fs = File.Create(@"c:\Output\Output(" + dt.Hour + "-" + dt.Minute + ").txt"))
-                //{
-                //    timestamp +=result ;
-                //    byte[] info = new UTF8Encoding(true).GetBytes(result + Environment.NewLine);
-                //    fs.Write(info, 0, info.Length);
-                //}
-                //try
-                //{
-
-                //    ZipFile.CreateFromDirectory(output, text);
-
-                //    ZipFile.ExtractToDirectory(text, extractPath);
-                  
-                //}
-                //catch (Exception) { }
+              
+              
 
             }
 
