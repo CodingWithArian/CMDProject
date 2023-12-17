@@ -25,5 +25,5 @@
     ## How to set up project
     - Clone the repository and navigate to created folder
   ## how to lunch
-  start the project using Visual studio
+ - start the project using Visual studio
 
