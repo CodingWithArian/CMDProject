@@ -22,4 +22,6 @@
  **Usage:**
   - Users can input commands similar to CMD.
   - The program responds by presenting the directory structure, file details, creation dates, and file sizes.
+    ## How to set up project
+    . Clone the repository and navigate to created folder
 
